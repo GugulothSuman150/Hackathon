@@ -1,6 +1,6 @@
-# StudyMate — PDF Q&A (Local Streamlit Version)
+# AnswerForce — PDF Q&A (Local Streamlit Version)
 
-This project is a local, Streamlit-based implementation of StudyMate:
+This project is a local, Streamlit-based implementation of AnswerForce:
 an AI-powered PDF question-answering system optimized for hackathon demos.
 It uses local (free) models where possible and requires no cloud API keys.
 
@@ -19,22 +19,3 @@ Install dependencies:
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-```
-
-> Note: The first run will download models from Hugging Face (embedding model and optionally `flan-t5-small`).
-> These downloads require internet and may take time.
-
-## Run
-```bash
-streamlit run app.py
-```
-
-## Notes
-- This is designed for **local** demos. For larger documents or better generation quality, consider using GPU or a cloud LLM (e.g., IBM Watsonx or hosted HF inference).
-- If you don't want generation, choose **retrieval-only** mode for deterministic, source-grounded responses.
-
-## Project structure
-- `app.py` — Streamlit app
-- `utils/pdf_utils.py` — PDF extraction helpers
-- `utils/embed_utils.py` — chunking, embedding, FAISS index
-- `utils/llm_utils.py` — prompt building & local generation
